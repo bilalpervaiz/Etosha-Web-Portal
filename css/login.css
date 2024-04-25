@@ -1,0 +1,52 @@
+/* CSS Document */
+body{
+margin: 0;
+padding: 0;
+width: 100vw;
+height: 100vh;
+background-color: #96deff;
+font-family: 'Roboto', sans-serif;
+}
+.wrap{
+align-items: center;
+display: flex;
+justify-content: center;
+height: 100%;
+width: 100%;
+}
+#content{
+align-items: center;
+display: flex;
+justify-content: center;
+width: 250px;
+height: 250px;
+margin: 0 auto;
+padding: 10px;
+border-radius: 10px;
+box-shadow: 5px 5px 5px #aaaaaa;
+background-color: #191e21;
+text-align: center;
+color: #ffffff;
+}
+input{
+width: 200px;
+height: 30px;
+font-size: 18px;
+margin: 5px;
+border: 0px;
+border-radius: 5px;
+padding: 2px;
+text-align: center;
+}
+
+button{
+width: 200px;
+height: 40px;
+font-size: 22px;
+margin: 5px;
+background-color: #3975f7;
+color: #ffffff;
+border: 0px;
+border-radius: 5px;
+cursor: pointer;
+}

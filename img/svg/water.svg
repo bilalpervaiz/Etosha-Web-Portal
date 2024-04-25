@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="6.4072075mm"
+   height="9.8403234mm"
+   viewBox="0 0 6.4072075 9.8403234"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="water.svg"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1">
+    <clipPath
+       id="cp_30-0">&#10;<path
+   d="m 3858.7721,2743.4307 v -50.3659 h -41.0389 v 50.3659 z"
+   id="path4431-3" />
+&#10;</clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-101.79638,-149.98909)">
+    <g
+       clip-path="url(#cp_30-0)"
+       id="g4433-7"
+       style="display:inline"
+       transform="matrix(0.26389074,0,0,0.26389074,-907.87891,-561.67524)">&#10;<g
+   transform="matrix(0.37308056,0,0,-0.37308056,3817.7332,2743.4307)"
+   id="g4432-3">&#10;<path
+   d="m 68.399999,35.6 c -0.5,0.7 -0.4,1.6 0.3,2.1 6.399999,5.000001 10.6,12.700001 11.2,20.700001 0.1,0.8 0.8,1.5 1.6,1.4 0.8,-0.1 1.5,-0.8 1.4,-1.6 -0.7,-8.9 -5.300001,-17.399999 -12.300001,-22.799999 L 69.599999,35 Z M 55.1,25.000003 c 10.8,0 20.9,5.3 26.9,14.3 4.2,6.3 5.8,13.1 5.5,20 C 87.300003,64.599998 86.099998,70 84.099998,75.199999 c -6.5,17 -15.9,34.200001 -26.799999,48.700001 -1.100001,1.4 -3.200001,1.4 -4.300001,0 l -1.4,-2 C 40.5,106.2 30,88.099998 24.3,69.600002 c -3.2,-10.2 -2.4,-20.7 3.7,-29.7 6,-9 16.200001,-14.900002 27.1,-14.899999 z"
+   stroke="none"
+   fill="#0084a8"
+   fill-rule="evenodd"
+   fill-opacity="1"
+   id="path4432-3" />
+&#10;</g>
+&#10;</g>
+  </g>
+</svg>

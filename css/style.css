@@ -1,0 +1,267 @@
+/* CSS Document */
+body{
+font-family: 'Roboto', sans-serif;
+padding: 0;
+margin: 0;
+}
+.navtop {
+	background-color: #2f3947;
+	height: 60px;
+	width: 100%;
+	border: 0;
+    color: #c1c4c8;
+	font-weight: bold;
+	text-decoration: none;
+    position: fixed;
+    top: 0;
+}
+table a{
+ text-decoration: none;
+ color: black;
+}
+.navtop div {
+	display: flex;
+	margin: 0 auto;
+	width: 1000px;
+	height: 100%;
+}
+.navtop div h1, .navtop div a, navtop div p{
+	display: inline-flex;
+	align-items: center;
+}
+.navtop div a {
+	padding: 0 20px;
+	text-decoration: none;
+	color: #c1c4c8;
+	font-weight: bold;
+}
+.navtop div a i {
+	padding: 2px 8px 0 0;
+}
+.fas fa-tshirt{
+cursor: pointer;
+}
+.basicInfo{
+width: 50%;
+}
+#sestava{
+width: 432px;
+height: 500px;
+position: relative;
+background-image: url("../img/hriste_pul.png");
+background-size: 100%;
+}
+.sestava.LW{
+    position: absolute;
+    top: 150px;
+    left: 30px;
+}
+.dres.LW{
+    position: absolute;
+    top: 100px;
+    left: 50px;
+}
+.C{
+    position: absolute;
+    top: 90px;
+    left: 155px;
+}
+.dres.C{
+    position: absolute;
+    top: 40px;
+    left: 175px;
+}
+.RW{
+    position: absolute;
+    top: 150px;
+    left: 280px;    
+}
+.dres.RW{
+    position: absolute;
+    top: 100px;
+    left: 305px;
+}
+.LD{
+    position: absolute;
+    top: 270px;
+    left: 50px;    
+}
+.dres.LD{
+    position: absolute;
+    top: 220px;
+    left: 75px;
+}
+.RD{
+    position: absolute;
+    top: 270px;
+    left: 260px;    
+}
+.dres.RD{
+    position: absolute;
+    top: 220px;
+    left: 282px;
+}
+.GK{
+    position: absolute;
+    top: 380px;
+    left: 155px;
+}
+.dres.GK{
+    position: absolute;
+    top: 330px;
+    left: 176px;
+}
+#zmenaCislaDresu{
+  
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: -30;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */ 
+}
+#zmenaTabulka{
+align-items: center;
+display: inline-block;
+justify-content: center;
+width: 250px;
+height: 200px;
+margin: 0 auto;
+padding: 10px;
+border-radius: 10px;
+box-shadow: 5px 5px 5px #aaaaaa;
+background-color: #191e21;
+text-align: center;
+color: #ffffff;
+}
+#zmenaTabulka input{
+width: 80px;
+height: 30px;
+font-size: 18px;
+margin: 5px;
+border: 0px;
+border-radius: 5px;
+padding: 2px;
+text-align: center;
+}
+
+#zmenaTabulka h2{
+	margin: 0;
+	padding: 0;
+	font-size: 22px;
+    border: 0;
+	color: #ffffff;
+
+}
+input[type="button"], input[type="submit"], button{
+cursor: pointer;
+}
+
+#zmenaTabulka button{
+width: 100px;
+height: 35px;
+font-size: 22px;
+margin: 5px;
+background-color: #3975f7;
+color: #ffffff;
+border: 0px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+select.sestava{
+  -webkit-appearance: none;
+    width: 125px;
+    height: 25px;
+    text-align-last:center;
+    text-align:center;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+i.dres{
+    z-index: 2;
+}
+span.fa-layers-text{
+    z-index: 1003;
+}
+.navtop div a:hover {
+	color: #eaebed;
+}
+body.loggedin {
+	background-color: #f3f4f7;
+}
+.content {
+	width: 1000px;
+	margin: 0 auto;
+}
+.content h2 {
+	margin: 0;
+	padding: 25px 0;
+	font-size: 22px;
+	border-bottom: 1px solid #e0e0e3;
+	color: #4a536e;
+}
+.content > p, .content > div {
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+	margin: 25px 0;
+	padding: 25px;
+	background-color: #fff;
+}
+.content > p table td, .content > div table td {
+	padding: 5px;
+}
+
+.content > div p {
+	padding: 5px;
+	margin: 0 0 10px 0;
+}
+
+table, tr, th, td{
+border: 1px solid #4a536e;
+border-collapse: collapse;
+padding: 5px;
+text-align: center;
+}
+#require{
+display: none;
+}
+
+#map > div.leaflet-control-container > div.leaflet-top.leaflet-left > div.leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control {
+    position: absolute !important;
+    top: 240px !important;
+    width:170px;
+    height: 140px;
+}
+
+#map > div.leaflet-control-container > div.leaflet-top.leaflet-left > div.leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control > section > div.leaflet-control-layers-overlays > label:nth-child(1) > div > span > 
+img {
+
+width:50px;
+height:50px;
+}
+.custom-popup {
+    width: 160px; 
+    height: 100px;
+    color: rgb(0, 0, 0);  
+    background-color: white; 
+    padding: 1px;
+    font-family: 'Times New Roman', Times, serif; 
+
+}
+.custom-popup img {
+    max-width: 150px; 
+    max-height: 120px; 
+    margin-bottom: -10px;
+    align-items: center;
+    display: block; 
+
+}

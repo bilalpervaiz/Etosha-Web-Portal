@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="7.0281725mm"
+   height="7.0281725mm"
+   viewBox="0 0 7.0281725 7.0281725"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="water.svg"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1">
+    <clipPath
+       id="cp_2">&#10;<path
+   d="M 6996.4421,4244.9678 V 21.162865 H 7.4756696 V 4244.9678 Z"
+   id="path1" />
+&#10;</clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-87.056353,-160.59956)">
+    <g
+       id="g1"
+       transform="matrix(1.8978551,0,0,1.8978551,-74.090347,-146.04115)">
+      <g
+         clip-path="url(#cp_2)"
+         id="g4303"
+         style="display:inline"
+         transform="matrix(0.08466667,0,0,0.08466667,-352.01986,-35.67266)">&#10;<g
+   transform="matrix(2.6508356,0,0,-2.6508356,5182.457,2351.5336)"
+   id="g4302">&#10;<path
+   d="M 0,7.5 C 4.1421356,7.5 7.5,4.1421356 7.5,0 7.5,-4.1421356 4.1421356,-7.5 0,-7.5 c -4.1421356,0 -7.5,3.3578644 -7.5,7.5 0,4.1421356 3.3578644,7.5 7.5,7.5 z"
+   fill="#ffffff"
+   fill-rule="evenodd"
+   stroke="#5c8944"
+   fill-opacity="1"
+   stroke-opacity="1"
+   stroke-width="1.5"
+   stroke-linecap="round"
+   stroke-linejoin="bevel"
+   stroke-miterlimit="10"
+   id="path4301" />
+&#10;</g>
+&#10;</g>
+      <g
+         clip-path="url(#cp_2)"
+         id="g4305"
+         style="display:inline"
+         transform="matrix(0.08466667,0,0,0.08466667,-352.01986,-35.67266)">&#10;<g
+   transform="matrix(1.5346943,0,0,-1.5346943,5166.3427,2367.6479)"
+   id="g4304">&#10;<path
+   d="M 5.5,12 C 4.67,12 4,12.67 4,13.5 4,14.33 4.67,15 5.5,15 6.33,15 7,14.33 7,13.5 7,12.67 6.33,12 5.5,12 Z M 3,16 v -5 h 5 v 0.32 c 0,0.6 0.55,1.02 0.77,1.54 C 8.92,13.22 9,13.61 9,14 h 9 v 1 h 1 V 6 H 18 V 8 H 3 V 6 H 2 v 10 z"
+   stroke="none"
+   fill="#e89d00"
+   fill-rule="evenodd"
+   fill-opacity="1"
+   id="path4303" />
+&#10;</g>
+&#10;</g>
+    </g>
+  </g>
+</svg>

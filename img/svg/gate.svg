@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="5.9592209mm"
+   height="5.9592295mm"
+   viewBox="0 0 5.9592209 5.9592295"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="water.svg"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1">
+    <clipPath
+       id="cp_7">&#10;<path
+   d="m 3935.0046,3107.1139 v -76.8742 h -61.4994 v 76.8742 z"
+   id="path4381" />
+&#10;</clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-90.570444,-150.87368)">
+    <g
+       id="g2"
+       transform="matrix(1.2875356,0,0,1.2875356,-30.02338,-51.137987)">
+      <g
+         clip-path="url(#cp_7)"
+         id="g4383"
+         style="display:inline"
+         transform="matrix(0.08466667,0,0,0.08466667,-234.58355,-100.58805)">&#10;<g
+   transform="matrix(3.4166325,0,0,-3.4166325,3873.5052,3107.1139)"
+   id="g4382">&#10;<path
+   d="m 7,3.2999992 v 1 H 6 v 5 c 0,1.6999998 3,2.9999998 3,2.9999998 1.2,-0.5 3,-1.7 3,-2.9999998 v -5 h -1 v -1 h 6 v 1 H 16 V 16.299999 H 2 V 4.2999992 H 1 v -1 z"
+   stroke="none"
+   fill="#4e4e4e"
+   fill-rule="evenodd"
+   fill-opacity="1"
+   id="path4382" />
+&#10;</g>
+&#10;</g>
+      <g
+         clip-path="url(#cp_7)"
+         id="g4385"
+         style="display:inline"
+         transform="matrix(0.08466667,0,0,0.08466667,-234.58355,-100.58805)">&#10;<g
+   transform="matrix(3.4166325,0,0,-3.4166325,3873.5052,3107.1139)"
+   id="g4384">&#10;<path
+   d="m 1,17.3 h 16 v 2 H 1 Z"
+   stroke="none"
+   fill="#4e4e4e"
+   fill-rule="evenodd"
+   fill-opacity="1"
+   id="path4383" />
+&#10;</g>
+&#10;</g>
+    </g>
+  </g>
+</svg>
