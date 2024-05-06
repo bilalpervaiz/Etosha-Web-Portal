@@ -240,6 +240,8 @@ display: none;
     top: 240px !important;
     width:170px;
     height: 140px;
+    font-family: 'PT Serif';
+    font-weight: 400;
 }
 
 #map > div.leaflet-control-container > div.leaflet-top.leaflet-left > div.leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control > section > div.leaflet-control-layers-overlays > label:nth-child(1) > div > span > 
@@ -254,8 +256,8 @@ height:50px;
     color: rgb(0, 0, 0);  
     background-color: white; 
     padding: 1px;
-    font-family: 'Times New Roman', Times, serif; 
-
+    font-family: 'PT Serif';
+    font-weight: 400;
 }
 .custom-popup img {
     max-width: 150px; 
@@ -264,4 +266,35 @@ height:50px;
     align-items: center;
     display: block; 
 
+}
+#info-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000; 
+  }
+  
+#info-icon img {
+    width: 25px; 
+    height: 25px;
+
+  }
+  #info-popup {
+    position: absolute;
+    top: 45px; 
+    right: 20px; 
+    background-color: #D79B70;
+    opacity: 85%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; 
+    max-width: 200px; 
+  }
+
+#info-popup p {
+  margin: 0; 
+  font-size: 13px;
+  font-family: 'pt-serif';
+  color: #ffffff;
 }

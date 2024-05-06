@@ -73,6 +73,17 @@
 
   <!-- Start MAP -->
   <div id="map">
+
+
+    <div id="info-icon">
+      <img src="img/info.png" alt="Information Icon" id="info-icon">
+    </div>
+
+    <div id="info-popup" style="display: none;">
+      <p>This web map is created under the master thesis research of Copernicus Master in Digital Earth by Muhammad Bilal</p>
+    </div>
+
+
     <div id="overlay" style="opacity: 0;"></div>
     <div id="soupatko"><i class="fas fa-chevron-right"></i></div>
     <div id="centerer-btn"><i class="far fa-map"></i></div> <!-- <i class="fas fa-expand-arrows-alt"></i> -->
@@ -111,8 +122,23 @@
       //maxBoundsViscosity: 1
     }).setView([home_x, home_y], home_z);
 
+    document.addEventListener("DOMContentLoaded", function () {
+      var infoIcon = document.getElementById("info-icon");
+      var infoPopup = document.getElementById("info-popup");
 
+      // Show popup when info icon is clicked
+      infoIcon.addEventListener("click", function (event) {
+        infoPopup.style.display = "block";
+        event.stopPropagation(); // Prevent click event from bubbling up to document
+      });
 
+      // Close popup when user clicks outside of it
+      document.addEventListener("click", function (event) {
+        if (event.target !== infoPopup && event.target !== infoIcon) {
+          infoPopup.style.display = "none";
+        }
+      });
+    });
 
     /*** Base Map Layer***/
     // Attribution
@@ -125,12 +151,12 @@
       attribution: tirazMapboxLight
     });
 
-    var baseCartoLight = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+    var baseCartoLight = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
 
-    var baseSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    var baseSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
     });
 
     var baseMapy = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -397,37 +423,37 @@
 
     /*** Heading and Introduction Left side Panel ***/
 
-    var header_default = '<h1>Etosha National Park<br/>Cartographic Designed Maps<br/></h1><h3></h3> <p style="text-align:center;font-size:80%; line-height:120%; padding:0 10px;">Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world </p>';
+    var header_default = '<h1>Etosha National Park<br/>Cartographic Designed Maps<br/></h1><h3></h3> <p style="text-align:center;font-family:PT Serif; font-weight: 400; line-height:120%; padding:0 10px;">Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world </p>';
 
     /*** List of Layers on Left Panel Functionality ***/
 
     var poltava = L.marker([49.58943580387158, 34.551020478000666]);
 
     /*Young Group*/
-    var sb_default = '<a href="#" onclick="poltava.remove();youngtiles.remove();experttiles.remove();publictiles.remove();youngtiles.addTo(map);"><div class="item-envelope promitaci" id="AS19452"><div class="item"><img src="img/youngmap.png"><span class="item-info"><span class="title">YOUNG GROUP MAP</span><span class="attributes">Etosha National Park</span></span></div><hr></div></a>';
+    var sb_default = '<a href="#" onclick="poltava.remove();youngtiles.remove();experttiles.remove();publictiles.remove();youngtiles.addTo(map);"><div class="item-envelope promitaci" id="AS19452"><div class="item"><img src="img/youngmap.png"><span class="item-info"><span class="title">YOUNG GROUP MAP</span><span class="attributes">This map is designed for younger people who like animated icons and graphics.Each species of wildlife is representing by intuitive graphic icons along with kahoot game for kids as well.</span></span></div><hr></div></a>';
     /*Expert Group*/
-    sb_default += '<a href="#" onclick="poltava.remove();youngtiles.remove();experttiles.remove();publictiles.remove();experttiles.addTo(map);"><div class="item-envelope promitaci" id="AS19683"><div class="item"><img src="img/expertmap.png"><span class="item-info"><span class="title">EXPERT GROUP MAP</span><span class="attributes">Etosha National Park</span></span></div><hr></div></a>';
+    sb_default += '<a href="#" onclick="poltava.remove();youngtiles.remove();experttiles.remove();publictiles.remove();experttiles.addTo(map);"><div class="item-envelope promitaci" id="AS19683"><div class="item"><img src="img/expertmap.png"><span class="item-info"><span class="title">EXPERT GROUP MAP</span><span class="attributes">This type of map is designed for those people who knows basic understanding of reading maps. Geometrical icons is used to represent wildlife distribution at waterholes in the park</span></span></div><hr></div></a>';
     /*Public Group*/
-    sb_default += '<a href="#" onclick="poltava.remove();youngtiles.remove();experttiles.remove();publictiles.remove();publictiles.addTo(map);"><div class="item-envelope promitaci" id="AS601810"><div class="item"><img src="img/publicmap.png"><span class="item-info"><span class="title">GENERAL PUBLIC GROUP MAP</span><span class="attributes">Etosha National Park</span></span></div><hr></div></a>';
+    sb_default += '<a href="#" onclick="poltava.remove();youngtiles.remove();experttiles.remove();publictiles.remove();publictiles.addTo(map);"><div class="item-envelope promitaci" id="AS601810"><div class="item"><img src="img/publicmap.png"><span class="item-info"><span class="title">GENERAL PUBLIC GROUP MAP</span><span class="attributes">This type of map is designed for public who are planning to visit this park. It has intuitive icons representing wildlife and also park general information</span></span></div><hr></div></a>';
 
 
     /*Young Gourp Map Details*/
     var img_AS19452 = '<img src="img/youngmap.png" class="nahled" alt="">';
-    var AS19452 = '<button onclick="document.getElementById(\'id01\').style.display=\'block\'" class="w3-btn">View the Map</button><div id="id01" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span onclick="document.getElementById(\'id01\').style.display=\'none\'" class="w3-closebtn">&times;</span><iframe src="img/Young_Group.pdf" width="300" height="300" frameborder="0"></iframe></div></div></div>';
-    AS19452 += '<div class="place-envelope"><h4>Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world. It contains 114 mammal species, 340 bird species, 110 reptiles, and 16 amphibians. The best time to visit the park is during the dry season, when animals are concentrated at waterholes that provide an amazing wildlife sighting experience. This map provides information about the different wildlife species that can potentially be seen at different water holes in the park</h4> <span class="attributes">';
-    AS19452 += '<p>Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world. It contains 114 mammal species, 340 bird species, 110 reptiles, and 16 amphibians. The best time to visit the park is during the dry season, when animals are concentrated at waterholes that provide an amazing wildlife sighting experience. This map provides information about the different wildlife species that can potentially be seen at different water holes in the park</p>';
+    var AS19452 = '<div><button onclick="document.getElementById(\'id01\').style.display=\'block\'" class="w3-btn">View the Map</button><a href="img/Young_Group.pdf" download><button class="w3-btn">Download Map in High</button></a></div><div id="id01" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span onclick="document.getElementById(\'id01\').style.display=\'none\'" class="w3-closebtn">&times;</span><img src="img/young3.png" style="border: 1px solid black;" width="1250" height="690"></img></div></div></div>';
+    // AS19452 += '<div class="place-envelope"><h4>Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world. It contains 114 mammal species, 340 bird species, 110 reptiles, and 16 amphibians. The best time to visit the park is during the dry season, when animals are concentrated at waterholes that provide an amazing wildlife sighting experience. This map provides information about the different wildlife species that can potentially be seen at different water holes in the park</h4> <span class="attributes">';
+    AS19452 += '<p style="font-family:PT Serif; font-weight: 400;">Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world. It contains 114 mammal species, 340 bird species, 110 reptiles, and 16 amphibians. The Etosha Pan is most amazing flat saline geomorphological feature that is visible even from space and covers about 23% of the park.</p>';
 
     /*Expert Gourp Map Details*/
     var img_AS19683 = '<img src="img/expertmap.png" class="nahled" alt="">';
-    var AS19683 = '<button onclick="document.getElementById(\'id01\').style.display=\'block\'" class="w3-btn">View the map</button><div id="id01" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span onclick="document.getElementById(\'id01\').style.display=\'none\'" class="w3-closebtn">&times;</span><iframe src="img/Expert_Group.pdf"></iframe></div></div></div>';
-    AS19683 += '<div class="place-envelope"><h4>Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world. It contains 114 mammal species, 340 bird species, 110 reptiles, and 16 amphibians. The best time to visit the park is during the dry season, when animals are concentrated at waterholes that provide an amazing wildlife sighting experience. This map provides information about the different wildlife species that can potentially be seen at different water holes in the park</h4> <span class="attributes">';
-    AS19683 += '<p>Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world. It contains 114 mammal species, 340 bird species, 110 reptiles, and 16 amphibians. The best time to visit the park is during the dry season, when animals are concentrated at waterholes that provide an amazing wildlife sighting experience. This map provides information about the different wildlife species that can potentially be seen at different water holes in the park</p>';
+    var AS19683 = '<div><button onclick="document.getElementById(\'id01\').style.display=\'block\'" class="w3-btn">View the Map</button><a href="img/Expert_Group.pdf" download><button class="w3-btn">Download PDF</button></a></div><div id="id01" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span onclick="document.getElementById(\'id01\').style.display=\'none\'" class="w3-closebtn">&times;</span><img src="img/expert3.png" style="border: 1px solid black;" width="1100" height="690"></img></div></div></div>';
+    //AS19683 += '<div class="place-envelope"><h4>Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world. It contains 114 mammal species, 340 bird species, 110 reptiles, and 16 amphibians. The best time to visit the park is during the dry season, when animals are concentrated at waterholes that provide an amazing wildlife sighting experience. This map provides information about the different wildlife species that can potentially be seen at different water holes in the park</h4> <span class="attributes">';
+    AS19683 += '<p style="font-family:PT Serif; font-weight: 400;"> Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world. It contains 114 mammal species, 340 bird species, 110 reptiles, and 16 amphibians. The best time to visit the park is during the dry season, when animals are concentrated at waterholes that provide an amazing wildlife sighting experience. This map provides information about the different wildlife species that more seen at different water holes and also their distribution in term of density in the park</p>';
 
     /*Public Group Map Details*/
     var img_AS601810 = '<img src="img/publicmap.png" class="nahled" alt="">';
-    var AS601810 = '<button onclick="document.getElementById(\'id01\').style.display=\'block\'" class="w3-btn">view the map</button><div id="id01" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span onclick="document.getElementById(\'id01\').style.display=\'none\'" class="w3-closebtn">&times;</span><iframe src="img/General_Public.pdf"></iframe></div></div></div>';
-    AS601810 += '<div class="place-envelope"><h4>Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world. It contains 114 mammal species, 340 bird species, 110 reptiles, and 16 amphibians. The best time to visit the park is during the dry season, when animals are concentrated at waterholes that provide an amazing wildlife sighting experience. This map provides information about the different wildlife species that can potentially be seen at different water holes in the park</h4> <span class="attributes">';
-    AS601810 += '<p>Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world. It contains 114 mammal species, 340 bird species, 110 reptiles, and 16 amphibians. The best time to visit the park is during the dry season, when animals are concentrated at waterholes that provide an amazing wildlife sighting experience. This map provides information about the different wildlife species that can potentially be seen at different water holes in the park</p>';
+    var AS601810 = '<div><button onclick="document.getElementById(\'id01\').style.display=\'block\'" class="w3-btn">View the Map</button><a href="img/General_Public.pdf" download><button class="w3-btn">Download PDF</button></a></div><div id="id01" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"><span onclick="document.getElementById(\'id01\').style.display=\'none\'" class="w3-closebtn">&times;</span><img src="img/public3.png" style="border: 1px solid black;" width="1250" height="690"></img></div></div></div>';
+    //AS601810 += '<div class="place-envelope"><h4>Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world. It contains 114 mammal species, 340 bird species, 110 reptiles, and 16 amphibians. The best time to visit the park is during the dry season, when animals are concentrated at waterholes that provide an amazing wildlife sighting experience. This map provides information about the different wildlife species that can potentially be seen at different water holes in the park</h4> <span class="attributes">';
+    AS601810 += '<p style="font-family:PT Serif; font-weight: 400;"> Etosha National Park covers an area of 22,937 km², is the most popular tourist destination in Namibia, and is considered one of the largest wildlife sanctuaries in the world. It contains 114 mammal species, 340 bird species, 110 reptiles, and 16 amphibians. The best time to visit the park is during the dry season, when animals are concentrated at waterholes that provide an amazing wildlife sighting experience. This map provides information about the different wildlife species that can potentially be seen at different water holes in the park</p>';
 
     var close = '<a href="#"><div class="close-circle"><i class="fas fa-times"></i></div></a>';
     jQuery('.content').html(sb_default);
@@ -492,9 +518,9 @@
       jQuery(".header").html(eval("img_" + placeID) + close);
       jQuery(".content").html(eval(placeID));
     };
-  
+
     /*** Geojson Layers In Map***/
-    
+
     // Create a marker cluster group
     //var markers = L.markerClusterGroup({showCoverageOnHover: false,spiderfyOnMaxZoom: true, zoomToBoundsOnClick: true});
 
@@ -666,12 +692,12 @@
           fillColor: 'none' // Opacity of the line
         };
       },
-      onEachFeature: function (feature, layer) {
-        // Create the popup content
-        var popupContent = "<h3 class='custom-popup'> Name: " + feature.properties.fclass + " Road </h3>";
-        // Bind the popup to the layer
-        layer.bindPopup(popupContent);
-      }
+      // onEachFeature: function (feature, layer) {
+      //   // Create the popup content
+      //   var popupContent = "<h3 class='custom-popup'> Name: " + feature.properties.fclass + " Road </h3>";
+      //   // Bind the popup to the layer
+      //   layer.bindPopup(popupContent);
+      // }
 
     }).addTo(map);
 
