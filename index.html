@@ -46,7 +46,42 @@
   <link rel="stylesheet" href="css/modal.css" />
   <link rel="stylesheet" href="css/style.css" />
 
+<style>
+ #layer-sidebar {
+  position: absolute;
+  top: 230px;
+  left: -270px; /* Hidden initially */
+  width: 250px;
+  background-color: white;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  padding: 10px;
+  z-index: 998;
+  transition: left 0.3s ease;
+}
 
+#layer-sidebar.open {
+  left: 0;
+}
+
+#layer-arrow {
+  position: absolute;
+  top: 55%;
+  right: -20px; /* 🔥 This makes it stick to the sidebar edge */
+  transform: translateY(-50%);
+  width: 20px;
+  height: 50px;
+  background-color: white;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
 
   <!-- Fix Viewport Height on Phone -->
   <script type="text/javascript">
@@ -73,6 +108,13 @@
 
   <!-- Start MAP -->
   <div id="map">
+  <div id="layer-sidebar">
+    <div id="layer-arrow">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+    <h3>Layer Control</h3>
+    <div id="layer-content"></div>
+  </div>
 
 
     <div id="info-icon">
@@ -529,7 +571,9 @@
       //the first parameter is  markercluster's configuration file
       {
         chunkedLoading: true,
-        showCoverageOnHover: false
+        showCoverageOnHover: false,
+        maxClusterRadius: 40
+
       }
       //the second parameter is  DonutCluster's configuration file
       , {
@@ -549,10 +593,10 @@
       pointToLayer: function (feature, latlng) {
         return L.circleMarker(latlng, {
           Species: feature.properties.Species,
-          radius: 6, // Adjust the size of the marker
+          radius: 8, // Adjust the size of the marker
           fillColor: 'orange', // Fill color of the marker
           color: '#F86F15', // Border color of the marker
-          weight: 0.8, // Border width of the marker
+          weight: 2, // Border width of the marker
           opacity: 1, // Opacity of the marker
           fillOpacity: 0.8 // Opacity of the marker fill
         });
@@ -563,6 +607,10 @@
         // Bind the popup to the layer
         layer.bindPopup(popupContent);
         // Add the layer to the marker cluster group
+        
+        layer.on('click touchstart', function () {
+              layer.openPopup();
+            });
         markers.addLayer(layer);
       }
     });
@@ -708,16 +756,73 @@
       // "baseCartoLight": baseCartoLight
     };
 
-    var overlayMaps = {
-      "<img src=\"img/water.png\" / style=\"width: 10px; height:15px;\">    Water": water,
-      "<img src=\"img/lodge.png\" / style=\"width: 15px; height:15px;\">     Lodges and Resort": lodge,
-      "<img src=\"img/gate.png\" / style=\"width: 15px; height:15px;\">     Gate": gate,
-      "<img src=\"img/road.png\" / style=\"width: 18px; height:3px;\">      Road": road,
-      "<img src=\"img/park.png\" / style=\"width: 18px; height:4px;\">      Park Boundary": park,
+    // This the Slider Code for the Checkbox Layer Control
 
-    };
+    jQuery("#layer-arrow").on('click', function () {
+        if ($("#layer-sidebar").hasClass('open')) {
+          $("#layer-sidebar").removeClass('open');
+          jQuery('#layer-arrow i').css({ transform: 'rotate(0deg)' });
+        } else {
+          $("#layer-sidebar").addClass('open');
+          jQuery('#layer-arrow i').css({ transform: 'rotate(180deg)' });
+        }
+      });
+    
+var overlayLayers = {
+  "Water": water,
+  "Lodges and Resort": lodge,
+  "Gate": gate,
+  "Road": road,
+  "Park Boundary": park
+};
 
-    var layerControl = L.control.layers(baseMaps, overlayMaps, { collapsed: false, position: 'topleft' }).addTo(map);
+var layerIcons = {
+  "Water": { src: "img/water.png", width: 10, height: 15 },
+  "Lodges and Resort": { src: "img/lodge.png", width: 15, height: 15 },
+  "Gate": { src: "img/gate.png", width: 15, height: 15 },
+  "Road": { src: "img/road.png", width: 18, height: 3 },
+  "Park Boundary": { src: "img/park.png", width: 18, height: 4 }
+};
+
+const layerContent = document.getElementById('layer-content');
+for (let key in overlayLayers) {
+  const layer = overlayLayers[key];
+  const iconData = layerIcons[key];
+
+  // Optional check to avoid missing icon errors
+  if (!iconData) {
+    console.warn(`Missing icon data for layer: ${key}`);
+    continue;
+  }
+
+  const div = document.createElement('div');
+  div.innerHTML = `
+    <label style="display: flex; align-items: center; gap: 6px;">
+      <input type="checkbox" checked onchange="
+        if(this.checked){
+          map.addLayer(overlayLayers['${key}']);
+        } else {
+          map.removeLayer(overlayLayers['${key}']);
+        }
+      ">
+      <img src="${iconData.src}" style="width:${iconData.width}px; height:${iconData.height}px;">
+      <span>${key}</span>
+    </label>
+  `;
+  layerContent.appendChild(div);
+}
+
+
+    // var overlayMaps = {
+    //   "<img src=\"img/water.png\" / style=\"width: 10px; height:15px;\">    Water": water,
+    //   "<img src=\"img/lodge.png\" / style=\"width: 15px; height:15px;\">     Lodges and Resort": lodge,
+    //   "<img src=\"img/gate.png\" / style=\"width: 15px; height:15px;\">     Gate": gate,
+    //   "<img src=\"img/road.png\" / style=\"width: 18px; height:3px;\">      Road": road,
+    //   "<img src=\"img/park.png\" / style=\"width: 18px; height:4px;\">      Park Boundary": park,
+
+    // };
+
+    // var layerControl = L.control.layers(baseMaps, overlayMaps, { collapsed: false, position: 'topleft' }).addTo(map);
 
 
   </script>
